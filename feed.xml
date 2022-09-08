@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<channel>
+		<title>{ Chihab Amghane }</title>
+		<description>My personal blog!</description>
+		<link>https://avuerro.github.io</link>
+		<atom:link href="https://avuerro.github.io/feed.xml" rel="self" type="application/rss+xml" />
+		
+			<item>
+				<title>Computer Science approximation of the human visual system</title>
+				
+				
+					<description>&lt;style&gt;
+ a{
+  color:red;
+ }
+&lt;/style&gt;
+
+&lt;script src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+
+&lt;script type=&quot;text/x-mathjax-config&quot;&gt;
+    MathJax.Hub.Config({
+        tex2jax: {
+            skipTags: [&apos;script&apos;, &apos;noscript&apos;, &apos;style&apos;, &apos;textarea&apos;, &apos;pre&apos;],
+            displayMath: [[&apos;$$&apos;,&apos;$$&apos;]],
+            inlineMath: [[&apos;$&apos;,&apos;$&apos;]],
+        },
+    });
+&lt;/script&gt;
+
+</description>
+				
+				<pubDate>Wed, 07 Sep 2022 00:00:00 +0200</pubDate>
+				<link>https://avuerro.github.io/computer%20vision/2022/09/07/Light-Field.html</link>
+				<guid isPermaLink="true">https://avuerro.github.io/computer%20vision/2022/09/07/Light-Field.html</guid>
+			</item>
+		
+	</channel>
+</rss>
