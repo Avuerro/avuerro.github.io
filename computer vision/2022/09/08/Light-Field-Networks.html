@@ -1,0 +1,766 @@
+
+<!-- Post Layout Start -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+  
+<!-- HEAD Start -->
+
+<head>
+  
+
+
+  <!-- Force HTTPS Start -->
+  <script>
+  // Don't force http when serving the website locally
+  if (!(window.location.host.startsWith("127.0.0.1")) && (window.location.protocol != "https:"))
+    window.location.protocol = "https";
+  </script>
+
+  <!-- Force HTTPS End -->
+
+
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="My personal blog!">
+  <meta name="author" content="Chihab Amghane">
+  <meta name="keywords" content="AI, Tech, Computer Vision">
+  <link rel="canonical" href="/computer%20vision/2022/09/08/Light-Field-Networks.html">
+  <title>{ Chihab Amghane } | Light Field Networks</title>
+
+  <!-- Bootstrap Core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <!-- Custom CSS -->
+  <link href="/css/grayscale.css" rel="stylesheet">
+  
+
+  <!-- Custom Fonts -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/rrssb.css" />
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  
+    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+  
+
+  
+
+  
+
+
+  <!-- iOS Web App mode -->
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-icon" sizes="36x36" href="/img/web-app/icon-36p.png">
+  <link rel="apple-touch-icon" sizes="48x48" href="/img/web-app/icon-48p.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/img/web-app/iconTrue72p.png">
+  <link rel="apple-touch-icon" sizes="96x96" href="/img/web-app/icon-96p.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/img/web-app/icon-144p.png">
+  <link rel="apple-touch-icon" sizes="192x192" href="/img/web-app/icon-192p.png">
+
+  <!-- Android Web App mode -->
+
+  <link rel="manifest" href="/manifest.json">
+
+
+
+
+  
+<!-- Chrome, Firefox OS and Opera -->
+<meta name="theme-color" content="#000000">
+<!-- Windows Phone -->
+<meta name="msapplication-navbutton-color" content="#000000">
+<!-- iOS Safari -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+
+  
+
+
+  <!-- Syntax highlight in post pages -->
+
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/monokai_sublime.min.css">
+
+
+
+
+</head>
+
+<!-- HEAD End -->
+
+
+  <body>
+
+    
+<!-- Navigation Start -->
+
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+        <i class="fa fa-bars"></i>
+      </button>
+      
+        <a class="navbar-brand" href="/">
+      
+          <div>
+            
+              <img src="/img/black-lab-glass.ico" alt="">
+            
+	    
+	      <img id="logo_nav" src="//img/author.png" alt="{ Chihab Amghane }" />
+	    
+              <!-- { Chihab Amghane } -->
+          </div>
+        </a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+      <ul class="nav navbar-nav">
+        
+          <!-- Blog, Post, Tag and Error pages -->
+          
+            <li>
+            
+                <a href="/#about"> About </a>
+            
+            </li>
+          
+            <li>
+            
+              
+                <a href="/blog/"> Blog </a>
+              
+            
+            </li>
+          
+            <li>
+            
+                <a href="/#contact"> Contact </a>
+            
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Navigation End -->
+
+
+    <section id="post" class="container content-section text-center">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+
+          
+<!-- Swipe Instructions Start -->
+
+<div id="swipe-instruction">
+  <div>
+    <p><br><br><br></p>
+    <i id="hand-swipe" class="fa fa-hand-o-up"></i>
+    <p><strong>
+    
+      Did you know that you can navigate the posts by swiping left and right?
+    
+    </strong></p>
+    <button type="button" class="btn btn-default ok-btn close-swipe-instruction">
+      
+        Awesome!
+      
+    </button>
+  </div>
+</div>
+
+<!-- Swipe Instructions End -->
+
+
+          <h1><strong>Light Field Networks</strong></h1>
+          <h4>
+            <strong>08 Sep 2022</strong>
+            <small>
+              . category:
+              <a class="category" href="/categories/computer vision.html">
+                Computer Vision
+              </a>.
+              <a href="/computer%20vision/2022/09/08/Light-Field-Networks.html#disqus_thread">Comments</a>
+              <br />
+              
+                <a class="tag" href="/tags/light field function.html">#light field function</a>
+              
+                <a class="tag" href="/tags/light field network.html">#light field network</a>
+              
+                <a class="tag" href="/tags/neural scene representation.html">#neural scene representation</a>
+              
+                <a class="tag" href="/tags/novel view synthesis.html">#novel view synthesis</a>
+              
+            </small>
+          </h4>
+
+          <section class="text-justify">
+            <style>
+ a{
+  color:#0000EE;
+ }
+</style>
+
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            displayMath: [['$$','$$']],
+            inlineMath: [['$','$']],
+        },
+        TeX: {
+        extensions: [
+        "AMSmath.js",
+        "AMSsymbols.js",
+        "noErrors.js",
+        "noUndefined.js",
+      ],
+      noErrors: {
+        multiLine:true
+      }
+    }
+    });
+</script>
+
+<h2 id="light-field-networks">Light Field Networks</h2>
+<p>In this post we will discuss the recent introduction of the <a href="https://www.vincentsitzmann.com/lfns/">Light Field Networks</a> (LFN) which is inspired by the Light Field Function and Scene Representation Networks (SRN).
+In this article, we will go over the theory behind the LFN and show what it is capable of. 
+I would like to start with a more general description of the LFN and gradually add some more detail and in depth explanations of the various concepts.</p>
+
+<p>The LFN takes as input a 2D image of a scene and the corresponding camera matrix and outputs a 2D image of the scene for a different point of view.</p>
+
+<blockquote>
+  <p>Camera matrix in this article refers to the $3 \times 4$ matrix that maps 3D world coordinates to 2D coordinates.
+It is used to convert the 3D points of a scene in the real world, captured by the camera, to a 2D image. There are two camera matrices, the internal and external camera matrices. The external camera matrix is important because the camera coordinate and world coordinate systems might be different. However, I only mention this for completeness, for now all we need to know is that there is a matrix, which we refer to as the pose, that is used to inform the LFN about the orientation of the camera with respect to the scene. If you want to know more about camera matrices, I would like to refer you to the following <a href="https://staff.fnwi.uva.nl/r.vandenboomgaard/IPCV20162017/LectureNotes/CV/PinholeCamera/PinholeCamera.html">Image Processing and Computer Vision tutorial</a>.</p>
+</blockquote>
+
+<p>The LFN parameterizes the Light Field Function for the 2D image and the Light Field Function maps the color to each ray that intersects with the scene (the 2D image). 
+Thus, in order for the LFN to be able to parameterize the Light Field Function, it needs to have access to some more information such as the rays that intersect with the scene, the intersection points of those rays and of course some information about what is displayed in the scene.
+The LFN relies on an embedding layer which encodes the most important visual information in the image, this is later on used to render the novel view. <!-- This is the first time you mention novel view-->
+The part that is responsible for the parameterization of the Light Field function is a multi-layered perceptron (MLP).</p>
+
+<blockquote>
+  <p>I always like to think of an embedding layer as a Lookup Table with weights, where each row corresponds to a sample in our data set and the row contains a weight that describes the characteristics of the sample. In this specific case, if we would use a dataset consisting of images, then each row in the embedding layer is related to a specific image and the row contains the weights that can be used to recreate the image.</p>
+</blockquote>
+
+<p>Let’s zoom out a bit and reconsider what the LFN actually does. 
+The LFN takes as input a 2D image and the pose corresponding to that image.
+The pose contains information about the orientation of the camera with respect to the image. 
+The LFN uses an embedding layer to extract visual information about the image and it calculates the rays. 
+Finally, the LFN parameterizes the Light Field function and outputs a novel view of the image.</p>
+
+<p><img src="/img/lightfieldnetworks/lfn_overview.png" alt="Overview of the architecture of the LFN" />
+<em>Figure 1. Simplified overview of the architecture of the LFN</em></p>
+
+<p>The main question that is left for us to answer is how the LFN calculates the rays and in order to be able to do that we have to explain another concept called the Plücker coordinates.
+However, before we do so, let’s briefly discuss ray parameterizations. 
+A ray starts at one point, $\mathbf{p}$ and continues forever in a certain direction, $\overset{\rightharpoonup}{v}$ , thus $r = \mathbf{p} + \overset{\rightharpoonup}{v}$.
+However, this notation is problematic in the sense that it is not unique for a ray.<br />
+Let’s imagine we have a ray $r$ that starts at $A$ and goes through $B$, $\overrightarrow{AB}$, in direction $\overset{\rightharpoonup}{v}$.
+Then we can parameterize the same ray in two ways, $ r = A + \overset{\rightharpoonup}{v}$ or $ r = B + \overset{\rightharpoonup}{v}$, both of these notations refer to the same ray (Figure 2).
+The problem with this non-uniqueness is that the MLP would have to learn the implicit relation between the different parameterizations for the same rays. 
+The Plücker coordinate notation overcomes this limitation because they are unique for each ray.</p>
+
+<p><img src="/img/lightfieldnetworks/ray_example.png" alt="Example of Ray in a cartesian coordinate system" />
+<em>Figure 2. Example of a ray</em></p>
+
+<blockquote>
+  <p>The Plücker notation parameterizes a ray as a tuple of the direction and moment.
+The moment of a ray is the cross product between any point, $\mathbf{p}$, on the ray and the direction, $\mathbf{d}$, of the ray.
+The parameterization of the ray $r$ becomes $r = (\mathbf{d}, \mathbf{m}) $, where $\mathbf{m} = \mathbf{p} \times \mathbf{d}$. The key takeaway is that these plücker coordinates are unique for each ray, for more information and proof I would like to refer you to the <a href="http://orb.olin.edu/plucker.pdf">notes on plücker coordinates by Richard Groff</a> and [1].</p>
+</blockquote>
+
+<p>Let’s circle back to our main question, “How does the LFN construct the rays and determine the intersection points with the scene?”.
+We know that the LFN parameterizes the rays with Plücker coordinates and that these are unique for each ray. 
+We also know that the LFN uses the camera matrix to convert from 2D points (pixels) to 3D points. 
+These 3D points are the start points of the ray and what is left to determine is the direction of the ray.
+In order to obtain the direction of a ray, you can subtract two points that are on that ray. 
+If we consider the ray in figure 2, then in order to get the direction of $r$ we subtract $A$ from $B$, e.g. $\mathbf{d} = A - B$. 
+The LFN does this in the same way by subtracting the coordinates of the camera position from the pixel coordinates.
+After having obtained the direction, the LFN continues with determining the Plücker coordinates and it uses the camera position as starting point $p$ of the ray, thus $r = \bigl( \mathbf{d}, p \times \mathbf{d}  \bigr)$</p>
+<blockquote>
+  <p>An interesting observation is that the LFN does not have to do ray tracing, it only requires a single evaluation since the pixel coordinates (which are the intersection points) are already known.</p>
+</blockquote>
+
+<p>The LFN then continues with the parameterization of the Light Field function and uses it to assign the appropriate color to the ray, after many training iterations the LFN learns to parameterize the Light Field functions that correspond with the input. 
+However, one of the most interesting aspects of the LFN is that it is capable of synthesizing novel views.
+In figure 3 and 4 we can see an example of what happens during training and testing.</p>
+
+<p><img src="/img/lightfieldnetworks/lfn_normal.png" alt="fig" />
+<em>Figure 3. Overview of the task during training.
+The pose represents the orientation of the camera w.r.t. the scene and the $\mathcal{L}$ represents the Light Field Network.</em></p>
+
+<p>The LFN is trained to reconstruct the input image, it takes as input a 2D image and the corresponding pose. 
+It then has to parameterize the Light Field function such that it is able to assign the correct colors to the calculated rays.
+It also uses the visual information encoded by the Embedding layer to assign the colors to the rays.</p>
+
+<p><img src="/img/lightfieldnetworks/lfn_novel_view.png" alt="fig" />
+<em>Figure 4. Overview of the task during testing. 
+The pose represents the orientation of the camera w.r.t. the scene. 
+In this case, the pose does not correspond to the input image but should correspond to the output image.
+The Light Field Network, represented as $\mathcal{L}$, should synthesize the novel view that corresponds to the pose.</em></p>
+
+<p>During testing, the LFN is given a pose (camera matrix) that does not correspond to the camera matrix of the input. 
+The LFN has to synthesize this new view by parameterizing the Light Field function that actually corresponds to the given camera matrix, this is also called novel view synthesis.</p>
+
+<h3 id="extracting-geometry-from-the-lfn">Extracting Geometry from the LFN</h3>
+<p>The last thing I would like to discuss about the LFN is the fact that they can be used to extract point clouds and depth maps.
+If you have the Light Field function of a scene then you also have the information necessary to reconstruct the depth of the scene. 
+However, this information is not always straightforward to extract because the parameterization of the Light Field as explained in one of <a href="https://avuerro.github.io/computer%20vision/2022/09/07/Light-Field.html">my earlier post</a> considers the image projected onto a plane with cartesian coordinates $x,y$. 
+It is therefore not straightforward to infer the depth.</p>
+
+<p>Fortunately, in the case of the LFN, there is a certain assumption that introduces certain properties that allow for extraction of depth from the Light Field function.</p>
+
+<h2 id="lambertian-reflection">Lambertian Reflection</h2>
+<p>Since the LFN builds upon the Light Field and the Lumigraph, we have the restriction that the color of a ray should not change. 
+The underlying assumption is that there is no dispersion of light and that light is reflected equally in all directions, this is also referred to as Lambertian Reflection (Figure 5).</p>
+
+<p><img src="/img/lightfieldnetworks/reflection_types.jpg" alt="example of reflection types" />
+<em>Figure 5. overview of the different types of reflection, taken from [2].</em></p>
+
+<p>In settings where the reflection is Lambertian, the color of a pixel is always consistent along the different viewpoints. 
+In other words, if we would observe a red pixel on a sphere, then that pixel should always be red, regardless of our point of view.
+The fact that the LFN only works in settings where the reflection is Lambertian is actually one of its limitations.
+However, it also introduces the possibility to extract depth information quite easily, but before we continue we need to introduce another concept called Epipolar Plane Image (EPI).</p>
+
+<h2 id="epipolar-plane-imaging">Epipolar Plane Imaging</h2>
+<p>I will briefly introduce EPI such that you can follow along with the rest of this article.
+If you are interested in learning more about EPIs, I would like to refer you to one of my other posts where we explain both the theory and showcase some code to create our own EPIs.
+An Epipolar plane image is a volume of images of a static scene recorded by a moving observer (camera). 
+The images are then stacked to form a volume and if we slice through the top of the volume at a certain height, 
+we can see two things; the color of pixels over time and we can deduce depth information due to parallax (Figures 7 and 8).
+The last one is especially interesting since we are trying to extract information about geometry from the Light Field Function.</p>
+
+<div style="width:100%;overflow:hidden">
+    <div style="float:left;width:50%">
+        <img src="/img/epi/sliced_example_epi.png" />
+        <i>Figure 7. EPI</i>
+    </div>
+    <div style="float:right;width:50%;margin-top:10%;margin-bottom:10%">
+        <img src="/img/epi/sliced_example_epi_top.png" width="379" />
+        <i>Figure 8. Overview of the top of a sliced through EPI</i>
+    </div>
+</div>
+
+<p>Before we continue, I would like to stress that the explanation, a more formal one, of extracting geometry information from EPIs and Light Field functions can be found in [1].
+However, I struggled with the explanation in the sense that it was quite abstract and concise.
+I will therefore try to provide a simpler explanation, which helped me understand the concept.
+First, I will provide the equation from the article ( eq. \ref{eq:depth_extraction} from [1]), explain the terms in the equation and then continue to explain how it relates to extracting geometry from EPIs.</p>
+
+<p>\begin{equation} 
+    \begin{split}
+    \mathbf{c}\bigl(s,t\bigr) &amp; = \Phi\bigl(\mathbf{r}\bigl(s,t\bigr)\bigr) \\<br />
+    \text{where } 
+    \mathbf{r}\bigl(s,t\bigr) &amp; = \overrightarrow{\mathbf{a}\bigl(s\bigr)\mathbf{b}\bigl(t\bigr)} \\<br />
+    &amp; = \Biggl(\frac{\mathbf{b}\bigl(t\bigr) - \mathbf{a}\bigl(s\bigr)}
+                    {\big\|\mathbf{b}\bigl(t\bigr) - \mathbf{a}\bigl(s\bigr)\big\|},
+               \frac{\mathbf{a}\bigl(s\bigr)\times\mathbf{b}\bigl(t\bigr)}
+               {\big\|\mathbf{b}\bigl(t\bigr) - \mathbf{a}\bigl(s\bigr)\big\|}\Biggr)
+    \end{split}
+    \tag{1}
+    \label{eq:depth_extraction}
+\end{equation}</p>
+
+<p>First, we go over the definitions of the terms and what they represent and then we will circle back and try to see the bigger picture and how everything relates.
+The figures in Figure 9 are helpful in understanding what is meant by certain terms in equation \ref{eq:depth_extraction}, the figure is copied from the paper on Light Field Networks [1].</p>
+
+<p><img src="/img/lightfieldnetworks/depth_extraction.png" alt="Visual overview of the stages for depth extraction" />
+<em>Figure 9. Visualization of how depth is extracted from EPIs, taken from [1]</em></p>
+
+<p>The order in which we go over the terms in the equation might be confusing initially but in the end it will make sense (hopefully).</p>
+
+<p>Let’s go over the first part $\mathbf{c}\bigl(s,t\bigr)$, it has parameters $s$ and $t$. In the left most figure in figure 9, a ray $\mathbf{r}$ and two rays $\mathbf{b}\bigl(t\bigr)$ and $\mathbf{a}\bigl(s\bigr)$ are displayed. First, we pick two points, $x,x’ \in \mathbb{R}^3$, that lie on on $\mathbf{r}$, then we 
+parameterize two rays that are orthogonal to $r$ and intersect with these points, which are called $s$ and $t$.
+<!-- These points are 2D for a very trivial reason which will become clear in a few steps. -->
+The rays $\mathbf{a}\bigl(s\bigr) = \bigl(x + s\mathbf{d}\bigr)$ and $\mathbf{b}\bigl(t\bigr)=\bigl(x’ + t\mathbf{d}\bigr)$, are parallel to eachother and orthogonal to $\mathbf{r}$. They form a 2D plane $(s,t)$ in which a group of rays lie, or in other words, this is the 2D parameterization of a Light Field.
+This group of rays is represented by the term $\mathbf{c}\bigl(s,\bigr)$ and the colors for those rays are determined by the LFN $\Phi\biggl(\mathbf{r}\bigl(s,t\bigr)\biggr)$.</p>
+
+<p>Let’s say we are interested in point $\mathbf{p}$, e.g. we would like to extract depth information with respect to point $\mathbf{p}$.
+<!--toevoegen-->
+<!-- sliced along 2d plane, containing tow rays a(s) and b(t) -->
+We have a 2D Light Field and what we can do now is draw all rays that pass through point $\mathbf{p}$, this is visualized in the middle subfigure of figure 9. 
+The magenta line $\tau$ is the last line that intersects with point $p$, and between the ray $\mathbf{r}$ and point $\tau$ lies a family of rays that go through $\mathbf{p}$. An important thing is to keep in mind that all these, non occluded rays, must have the same color (remember Lambertian Reflection). 
+If we draw all rays in this Light Field and then plot the color of the ray, then we obtain the EPI  (right most figure of figure 9).
+In the gif in figure 10, an example of what is meant by drawing all the rays in a light field and then plotting the colors of those rays is shown.</p>
+
+<p><img src="/img/lightfieldnetworks/depth.gif" alt="Example of how the EPI is created by plotting all the colors of the rays in a Light Field, taken from [3]" />
+<em>Figure 10. Example of how the EPI is created by plotting all the colors of the rays in a Light Field, taken from [3]</em></p>
+
+<p>Let’s reiterate the steps we took, we created two rays $\mathbf{a}$ and $\mathbf{b}$, parallel to eachother but orthogonal to $\mathbf{r}$, which form a plane ( the 2D Light Field). In this plane we sample all rays and for each ray we plot it’s color, which results in the EPI.
+Furthermore, let’s re-examine equation \ref{eq:depth_extraction}, where we state that for a family of rays the colors can be determined using the LFN, i.e. $\mathbf{c}\bigl(s,t\bigr) = \Phi\biggl(\mathbf{r}\bigl(s,t\bigr)\biggr)$.
+The second part of equation \ref{eq:depth_extraction} is quite straightforward, it is a general description of the rays in the Light Field of the 2D plane $(s,t)$. 
+Before we continue with explaining the last part of the equation, I would like to point out that the rays in the plane $(s,t)$ start on $\mathbf{a}\bigl(s\bigr)$ and go through $\mathbf{b}\bigl(t\bigr)$, thus a ray can be parameterized by two points, one on $\mathbf{a}$ and one on $\mathbf{b}$.
+The first part; $\frac{\mathbf{b}\bigl(t\bigr) - \mathbf{a}\bigl(s\bigr)}
+                    {\big\|\mathbf{b}\bigl(t\bigr) - \mathbf{a}\bigl(s\bigr)\big\|}$, is thus the normalized direction.
+The second part; $\frac{\mathbf{a}\bigl(s\bigr)\times\mathbf{b}\bigl(t\bigr)}
+               {\big\|\mathbf{b}\bigl(t\bigr) - \mathbf{a}\bigl(s\bigr)\big\|}$, is a normalized vector, normal to the plane formed by the lines $\mathbf{a}\bigl(s\bigr)$ and $\mathbf{b}\bigl(t\bigr)$.</p>
+<blockquote>
+  <p>We know that the Plücker parameterization of a ray is $\mathbf{r}\bigl(\mathbf{d}, \mathbf{m}\bigr)$
+where $\mathbf{d}$ is the direction and $\mathbf{m}$ is the moment. 
+The moment is a vector where its magnitude represents the distance between the origin of a ray and a plane that can be formed between the ray and the origin of the ray. 
+In our case, the origin of the ray is on $\mathbf{a}\bigl(s\bigr)$ and it resides in the 2D plane formed by $\mathbf{a}\bigl(s\bigr)$ and $\mathbf{b}\bigl(t\bigr)$. Thus the second element of the tuple in equation \ref{eq:depth_extraction} can be characterized as the moment.</p>
+</blockquote>
+
+<p>In other words, the two elements of the tuple in \ref{eq:depth_extraction} is the Plücker parameterization of ray $\mathbf{r}\bigl(s,t\bigr)$.</p>
+
+<p>Now that we understand how the Light Field is constructed and how the EPI is constructed from the Light Field, we can continue with exploring how depth is extracted from the EPI.
+The first thing we should notice is that the family of rays that pass through $\mathbf{p}$ are represented as $L_p$ in figure 9. 
+If we draw the EPI points for all the rays in $L_p$ we notice that they are on a line (Figures 9 and 10), and since we are dealing with Lambertian reflection the colors of these points should be the same. 
+However, the most interesting aspect is that if we pick a point closer to the camera $\mathbf{p’}$ and construct a new family of rays, $L_{p’}$, that go through that point, then we can use the gradient of the lines to obtain information about the depth of those points (Figure 11).</p>
+
+<p><img src="/img/lightfieldnetworks/depth2.gif" alt="Overview of how different families of rays through different points in the scene, have a different slope. This information is used in extracting geometry of a scene. Taken from [3]" />
+<em>Figure 11. Overview of how different families of rays through different points in the scene, have a different slope. This information is used in extracting geometry of a scene. Taken from [3]</em></p>
+
+<p>In the paper, they show how we can use the distance between $\mathbf{a}\bigl(s\bigr)$ and $\mathbf{b}\bigl(t\bigr)$ and the gradient of the slope for the family of rays $L_p$ to calculate the depth of point $\mathbf{p}$. 
+However, we now understand the background information required to follow along with the proposition and proofs explained in [1], so I would like to refer you to [1] in case you are interested in the exact methodology.</p>
+
+<p>The code for extracting depth maps and point clouds can be found <a href="https://github.com/Avuerro/light-field-networks/blob/main/extracting_geometry.py">on my github</a> as well as a <a href="https://github.com/Avuerro/light-field-networks/blob/main/extracting_geometry.ipynb">jupyter notebook</a> that you can run. All instructions for running the code can be found in the readme of <a href="https://github.com/Avuerro/light-field-networks">the github repository</a>.</p>
+
+<p>In conclusion, we have discussed the Light Field Network and its relation to Light Field functions.
+We have also explained how geometry information can be extracted from the EPI which can be constructed by sampling rays in a Light Field. 
+Finally, the links to the code in my github repository should be useful in case you would like to tinker around with the LFN. As always, feedback is very welcome, feel free to point out any flaws, errors, other interesting things or parts that need more clarification.</p>
+
+<h2 id="references">References</h2>
+<p>[1] Vincent Sitzmann, Semon Rezchikov, William T. Freeman, Joshua B. Tenenbaum, and Fredo Du-
+rand. Light field networks: Neural scene representations with single-evaluation rendering. 6 2021.</p>
+
+<p>[2] https://notebook.community/tensorflow/graphics/tensorflow_graphics/notebooks/reflectance</p>
+
+<p>[3] https://papertalk.org/papertalks/37418</p>
+
+          </section>
+
+          
+<!-- Share Buttons Start -->
+<div>
+  <ul class="rrssb-buttons clearfix">
+    
+      <li class="rrssb-email">
+        <a href="mailto:?subject=Light Field Networks&body=https://avuerro.github.io/computer%20vision/2022/09/08/Light-Field-Networks.html" data-proofer-ignore>
+          <span class="rrssb-icon">
+            <svg xmlns="https://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+              <path d="M20.11 26.147c-2.335 1.05-4.36 1.4-7.124 1.4C6.524 27.548.84 22.916.84 15.284.84 7.343 6.602.45 15.4.45c6.854 0 11.8 4.7 11.8 11.252 0 5.684-3.193 9.265-7.398 9.3-1.83 0-3.153-.934-3.347-2.997h-.077c-1.208 1.986-2.96 2.997-5.023 2.997-2.532 0-4.36-1.868-4.36-5.062 0-4.75 3.503-9.07 9.11-9.07 1.713 0 3.7.4 4.6.972l-1.17 7.203c-.387 2.298-.115 3.3 1 3.4 1.674 0 3.774-2.102 3.774-6.58 0-5.06-3.27-8.994-9.304-8.994C9.05 2.87 3.83 7.545 3.83 14.97c0 6.5 4.2 10.2 10 10.202 1.987 0 4.09-.43 5.647-1.245l.634 2.22zM16.647 10.1c-.31-.078-.7-.155-1.207-.155-2.572 0-4.596 2.53-4.596 5.53 0 1.5.7 2.4 1.9 2.4 1.44 0 2.96-1.83 3.31-4.088l.592-3.72z"
+              />
+            </svg>
+          </span>
+          <span class="rrssb-text">email</span>
+        </a>
+      </li>
+    
+    
+    
+      <li class="rrssb-twitter">
+        <a href="https://twitter.com/share?url=https://avuerro.github.io/computer%20vision/2022/09/08/Light-Field-Networks.html&text=Light Field Networks"
+        class="popup">
+          <span class="rrssb-icon"><svg xmlns="https://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28"><path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"/></svg></span>
+          <span class="rrssb-text">twitter</span>
+        </a>
+      </li>
+    
+    
+      <li class="rrssb-linkedin">
+      <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://avuerro.github.io/computer%20vision/2022/09/08/Light-Field-Networks.html" class="popup">
+        <span class="rrssb-icon">
+          <svg xmlns="https://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+            <path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"
+            />
+          </svg>
+        </span>
+        <span class="rrssb-text">linkedin</span>
+      </a>
+      </li>
+    
+    
+      <li class="rrssb-reddit">
+        <a href="https://www.reddit.com/submit?url=https://avuerro.github.io/computer%20vision/2022/09/08/Light-Field-Networks.html&title=Light Field Networks" target="_blank">
+          <span class="rrssb-icon">
+            <svg xmlns="https://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+              <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+              />
+              <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+              />
+            </svg>
+          </span>
+          <span class="rrssb-text">reddit</span>
+        </a>
+      </li>
+    
+    
+      <li class="rrssb-googleplus">
+        <a href="https://plus.google.com/share?url=https://avuerro.github.io/computer%20vision/2022/09/08/Light-Field-Networks.html" class="popup">
+          <span class="rrssb-icon">
+            <svg xmlns="https://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>
+          </span>
+          <span class="rrssb-text">google+</span>
+        </a>
+      </li>
+    
+    
+    
+    
+      <li class="rrssb-pocket">
+        <a href="https://getpocket.com/save?url=https://avuerro.github.io/computer%20vision/2022/09/08/Light-Field-Networks.html">
+          <span class="rrssb-icon">
+            <svg width="32" height="28" viewBox="0 0 32 28" xmlns="http://www.w3.org/2000/svg">
+              <path d="M28.782.002c2.03.002 3.193 1.12 3.182 3.106-.022 3.57.17 7.16-.158 10.7-1.09 11.773-14.588 18.092-24.6 11.573C2.72 22.458.197 18.313.057 12.937c-.09-3.36-.05-6.72-.026-10.08C.04 1.113 1.212.016 3.02.008 7.347-.006 11.678.004 16.006.002c4.258 0 8.518-.004 12.776 0zM8.65 7.856c-1.262.135-1.99.57-2.357 1.476-.392.965-.115 1.81.606 2.496 2.453 2.334 4.91 4.664 7.398 6.966 1.086 1.003 2.237.99 3.314-.013 2.407-2.23 4.795-4.482 7.17-6.747 1.203-1.148 1.32-2.468.365-3.426-1.01-1.014-2.302-.933-3.558.245-1.596 1.497-3.222 2.965-4.75 4.526-.706.715-1.12.627-1.783-.034-1.597-1.596-3.25-3.138-4.93-4.644-.47-.42-1.123-.647-1.478-.844z"
+              />
+            </svg>
+          </span>
+          <span class="rrssb-text">pocket</span>
+        </a>
+      </li>
+    
+    
+  </ul>
+</div>
+
+<!-- Share Buttons End -->
+
+
+          
+            
+<!-- Disqus Comments Start -->
+
+
+  <div id="disqus_thread"></div>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+<!-- Disqus Comments End -->
+
+          
+
+
+          <hr />
+
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Start -->
+
+<footer>
+
+    <!-- Social Buttons Start -->
+
+<ul class="list-inline social-buttons">
+    
+    <li><a href="https://github.com/Avuerro/" target="_blank"><i class="fa fa-github fa-fw"></i></a></li>
+    
+    <li><a href="https://www.linkedin.com/in/chihab-amghane/" target="_blank"><i class="fa fa-linkedin fa-fw"></i></a></li>
+    
+    
+</ul>
+
+<!-- Social Buttons End -->
+
+
+    <p><br><br></p>
+
+    <div class="container text-center">
+        <p>Copyright &copy; Chihab Amghane 2022</p>
+        <!--  -->
+    </div>
+</footer>
+
+<p></p>
+
+<!-- Footer End -->
+
+
+    
+<!-- Javascript Start -->
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<!--* Start Bootstrap - Grayscale Bootstrap Theme (http://startbootstrap.com)
+* Code licensed under the Apache License v2.0.
+* For details, see http://www.apache.org/licenses/LICENSE-2.0.-->
+<script>
+function toggleNavCollapse(){50<$(".navbar").offset().top?$(".navbar-fixed-top").addClass("top-nav-collapse"):$(".navbar-fixed-top").removeClass("top-nav-collapse");}
+$(document).ready(toggleNavCollapse);
+$(window).scroll(toggleNavCollapse);$(function(){$("a.page-scroll").bind("click",function(b){var a=$(this);$("html, body").stop().animate({scrollTop:$(a.attr("href")).offset().top-50},1500,"easeInOutExpo",function(){a.blur()});b.preventDefault()})});$(".navbar-collapse ul li a").click(function(){$(".navbar-toggle:visible").click()});
+</script>
+
+
+
+
+
+  <!-- Syntax highlight in post pages-->
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+  
+
+  <!-- Google Tracking Id Start -->
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', '', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+  <!-- Google Tracking Id End -->
+
+  
+
+
+
+
+  <!-- Disqus -->
+
+  
+
+    <script type="text/javascript">
+    var disqus_shortname = 'personal-jekyll-theme';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+  
+
+  
+
+    <!-- Comments Counter Start -->
+
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'personal-jekyll-theme'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+    </script>
+
+    <!-- Comments Counter End -->
+
+  
+
+
+
+
+
+  <!-- Share buttons Start -->
+
+  <script src="/js/rrssb.min.js"></script>
+
+  <!-- Share buttons End -->
+
+
+
+
+
+<script>
+function addTohistory() {
+  if (!window.location.host.startsWith("127.0.0.1")) {
+    history.pushState({}, 'Light Field Networks', 'https://avuerro.github.io/computer%20vision/2022/09/08/Light-Field-Networks.html');
+  }
+}
+</script>
+
+<!-- Gesture Navigation / Swipe Instruction Start -->
+
+
+  
+
+    <!-- Post Gesture Navigation Start -->
+
+    <script type="text/javascript" src="/js/hammer.min.js"></script>
+
+    <script>
+      var post = document.getElementById('post');
+
+      new Hammer(post).on('swipeleft', function(event) {
+        addTohistory();
+        
+          document.location.replace("/computer%20vision/2022/09/07/Light-Field.html");
+        
+      });
+
+      new Hammer(post).on('swiperight', function(event) {
+        addTohistory();
+        
+          document.location.replace("/");
+        
+      });
+    </script>
+
+    <!-- Post Gesture Navigation Start -->
+
+  
+
+  
+
+  
+
+  
+
+    <!-- Swipe Instructions for Post Start -->
+
+    <script>
+      $(document).ready(function(){
+        if(!localStorage.getItem('post-swipeshowed')){
+          $("#swipe-instruction").fadeIn();
+          $("#swipe-instruction .close-swipe-instruction").click(function(){
+            $("#swipe-instruction").fadeOut();
+          });
+          localStorage.setItem('post-swipeshowed', true);
+        }
+      });
+    </script>
+
+    <!-- Swipe Instructions for Post End -->
+
+  
+
+<!-- Gesture Navigation / Swipe Instruction End -->
+
+
+
+<!-- Javascript End -->
+
+
+  </body>
+</html>
+
+<!-- Post Layout End -->

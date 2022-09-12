@@ -7,6 +7,50 @@
 		<atom:link href="https://avuerro.github.io/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Light Field Networks</title>
+				
+				
+					<description>&lt;style&gt;
+ a{
+  color:#0000EE;
+ }
+&lt;/style&gt;
+
+&lt;script src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+
+&lt;script type=&quot;text/x-mathjax-config&quot;&gt;
+    MathJax.Hub.Config({
+        tex2jax: {
+            skipTags: [&apos;script&apos;, &apos;noscript&apos;, &apos;style&apos;, &apos;textarea&apos;, &apos;pre&apos;],
+            displayMath: [[&apos;$$&apos;,&apos;$$&apos;]],
+            inlineMath: [[&apos;$&apos;,&apos;$&apos;]],
+        },
+        TeX: {
+        extensions: [
+        &quot;AMSmath.js&quot;,
+        &quot;AMSsymbols.js&quot;,
+        &quot;noErrors.js&quot;,
+        &quot;noUndefined.js&quot;,
+      ],
+      noErrors: {
+        multiLine:true
+      }
+    }
+    });
+&lt;/script&gt;
+
+&lt;h2 id=&quot;light-field-networks&quot;&gt;Light Field Networks&lt;/h2&gt;
+&lt;p&gt;In this post we will discuss the recent introduction of the &lt;a href=&quot;https://www.vincentsitzmann.com/lfns/&quot;&gt;Light Field Networks&lt;/a&gt; (LFN) which is inspired by the Light Field Function and Scene Representation Networks (SRN).
+In this article, we will go over the theory behind the LFN and show what it is capable of. 
+I would like to start with a more general description of the LFN and gradually add some more detail and in depth explanations of the various concepts.&lt;/p&gt;
+</description>
+				
+				<pubDate>Thu, 08 Sep 2022 00:00:00 +0200</pubDate>
+				<link>https://avuerro.github.io/computer%20vision/2022/09/08/Light-Field-Networks.html</link>
+				<guid isPermaLink="true">https://avuerro.github.io/computer%20vision/2022/09/08/Light-Field-Networks.html</guid>
+			</item>
+		
+			<item>
 				<title>Computer Science approximation of the human visual system</title>
 				
 				
